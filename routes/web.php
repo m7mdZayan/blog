@@ -22,3 +22,5 @@ Route::get('/posts',[\App\Http\Controllers\PostController::class,'index'])->name
 
 Route::get('posts/create',[\App\Http\Controllers\PostController::class,'create'])->name('posts.create');
 
+Route::get('/posts/{posts}',[\App\Http\Controllers\PostController::class,'show'])->name('posts.show');
+
