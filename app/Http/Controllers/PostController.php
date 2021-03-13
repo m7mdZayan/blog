@@ -36,6 +36,15 @@ class PostController extends Controller
 
     }
 
+    public function destroy(){
+        $post = ['id' => 1, 'title' => 'HTML', 'description' => 'Hyper Text Markup Language', 'posted_by' => 'Mohamed', 'created_at' => '2021-03-14'];
+
+        return view('posts.destroy', [
+            'post' => $post
+        ]);
+
+    }
+
     public function create(){
         return view('posts.create');
     }
