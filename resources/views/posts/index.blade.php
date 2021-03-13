@@ -2,7 +2,9 @@
 
 
 @section('content')
-    <a href="#" class="btn btn-success">Create Post</a>
+    <div class="text-center">
+        <a href="#" class="btn btn-primary ">Create Post</a>
+    </div>
 
     <table class="table  mt-5 container">
         <thead>
@@ -23,7 +25,7 @@
                 <td>{{$post['created_at']}}</td>
                 <td class="col">
                     <a href="" class="btn btn-info">View</a>
-                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-success">Edit</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>
             </tr>

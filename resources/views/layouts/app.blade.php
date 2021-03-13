@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-- As a link -->
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-dark bg-dark mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('posts.index')}}">All Posts</a>
     </div>
