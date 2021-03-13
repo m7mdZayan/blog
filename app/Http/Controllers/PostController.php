@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -17,5 +16,9 @@ class PostController extends Controller
         return view('posts.index', [
             'posts' => $posts,
         ]);
+    }
+
+    public function create(){
+        return view('posts.create');
     }
 }
