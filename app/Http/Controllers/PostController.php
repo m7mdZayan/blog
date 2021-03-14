@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Post;
+
 class PostController extends Controller
 {
     //
     public function index()
     {
-        $posts = [
-            ['id' => 1, 'title' => 'HTML', 'description' => 'Hyper Text Markup Language', 'posted_by' => 'Mohamed', 'created_at' => '2021-03-14'],
-            ['id' => 2, 'title' => 'ANGULAR', 'description' => 'Javascript Framework', 'posted_by' => 'Hassan', 'created_at' => '2021-03-13'],
-        ];
+        $posts = Post::all();
 
         return view('posts.index', [
             'posts' => $posts,
@@ -20,8 +19,8 @@ class PostController extends Controller
 
     public function show($post)
     {
-       $post = ['id' => 1, 'title' => 'HTML', 'description' => 'Hyper Text Markup Language', 'posted_by' => 'Mohamed', 'created_at' => '2021-03-14'];
-
+       //$post = ['id' => 1, 'title' => 'HTML', 'description' => 'Hyper Text Markup Language', 'posted_by' => 'Mohamed', 'created_at' => '2021-03-14'];
+        $post = Post::find($post);
         return view('posts.show', [
             'post' => $post
         ]);
