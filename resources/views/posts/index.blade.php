@@ -21,12 +21,12 @@
             <tr>
                 <th scope="row">{{$post['id']}}</th>
                 <td>{{$post['title']}}</td>
-                <td>{{$post['posted_by']}}</td>
+                <td>{{$post->user ? $post->user->name : 'user not found'}}</td>
                 <td>{{$post['created_at']}}</td>
                 <td class="col">
-                    <a href={{route('posts.show',1)}} class="btn btn-info">View</a>
-                    <a href={{route('posts.edit',1)}} class="btn btn-success">Edit</a>
-                    <a href={{route('posts.destroy',1)}} class="btn btn-danger">Delete</a>
+                    <a href={{route('posts.show',$post)}} class="btn btn-info">View</a>
+                    <a href={{route('posts.edit',$post)}} class="btn btn-success">Edit</a>
+                    <a href={{route('posts.delete',$post)}} class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         @endforeach
