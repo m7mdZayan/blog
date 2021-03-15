@@ -16,6 +16,9 @@ class PostController extends Controller
         $posts = Post::all();
 
 
+          $posts = Post::paginate(2)->fragment('users');
+        //
+
         return view('posts.index', [
             'posts' => $posts,
         ]);
@@ -56,7 +59,7 @@ class PostController extends Controller
 
     public function store(Request $myRequest): \Illuminate\Http\RedirectResponse
     {
-        $data = \request()->all();
+        $data = $myRequest->all();
 
         Post::create($data);
         return redirect()->route('posts.index');
@@ -71,10 +74,7 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('posts.index')
-            ->with('success','post updated successfully');
-
-
+        return redirect()->route('posts.index');
 
   //      var_dump($request->all());
        // dd($request->all());

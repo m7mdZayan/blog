@@ -20,13 +20,13 @@ Route::get('/', function () {
 
 Route::get('posts/create',[\App\Http\Controllers\PostController::class,'create'])->name('posts.create');
 
+Route::get('posts/store',[\App\Http\Controllers\PostController::class,'store'])->name('posts.store');
+
 Route::get('/posts',[\App\Http\Controllers\PostController::class,'index'])->name('posts.index');
 
 Route::put('post/{post}',[\App\Http\Controllers\PostController::class,'update'])->name('posts.update');
 
 Route::get('/posts/{posts}',[\App\Http\Controllers\PostController::class,'show'])->name('posts.show');
-
-Route::get('posts/store',[\App\Http\Controllers\PostController::class,'store'])->name('posts.store');
 
 Route::get('/posts/{posts}/edit',[\App\Http\Controllers\PostController::class,'edit'])->name('posts.edit');
 
