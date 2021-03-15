@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\User;
 //use http\Env\Request;
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePostRequest;
 
 class PostController extends Controller
 {
@@ -57,7 +58,7 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    public function store(Request $myRequest): \Illuminate\Http\RedirectResponse
+    public function store(StorePostRequest $myRequest): \Illuminate\Http\RedirectResponse
     {
         $data = $myRequest->all();
 
