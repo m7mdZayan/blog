@@ -6,7 +6,7 @@
         <a href={{route('posts.create')}} class="btn btn-primary ">Create Post</a>
     </div>
 
-    <table class="table  mt-5 container">
+    <table class="table mt-5 container text-center">
         <thead>
         <tr>
             <th scope="col">#</th>
